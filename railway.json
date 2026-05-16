@@ -1,0 +1,11 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1 --loop uvloop",
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 5,
+    "restartPolicyType": "on_failure"
+  }
+}
